@@ -23,12 +23,14 @@ export function inicializarCarrinho() {
 
 function removerDoCarrinho(idProduto){
     delete idsProdutoCarrinhoQuandtidade[idProduto];
+    atualizarPrecoCarrinho();
     renderizarProdutosCarrinho();
 }
 
 function incrementarQuantidadeProduto(idProduto){
-    idsProdutoCarrinhoQuandtidade[idProduto]++
-    atualizarInformacaoProduto(idProduto)
+    idsProdutoCarrinhoQuandtidade[idProduto]++;
+    atualizarPrecoCarrinho();
+    atualizarInformacaoProduto(idProduto);
 }
 
 function decrementarQuantidadeProduto(idProduto){
@@ -36,8 +38,9 @@ function decrementarQuantidadeProduto(idProduto){
         removerDoCarrinho(idProduto);
         return;
     }
-    idsProdutoCarrinhoQuandtidade[idProduto]--
-    atualizarInformacaoProduto(idProduto)
+    idsProdutoCarrinhoQuandtidade[idProduto]--;
+    atualizarPrecoCarrinho();
+    atualizarInformacaoProduto(idProduto);
 }
 
 function atualizarInformacaoProduto(idProduto){
@@ -92,3 +95,12 @@ export function adiconarAoCarrinho(idProduto) {
 
     desenharProdutoNoCarrinho(idProduto);
 };
+
+function atualizarPrecoCarrinho(){
+    const precoCarrinho= document.getElementById('preco-total');
+    let precoTotalCarrinho=0;
+    for(const idProdutoNoCarrinho in idsProdutoCarrinhoQuandtidade){
+        precoTotalCarrinho+=catalogo.find(p=>p.id===idProdutoNoCarrinho).preco *idsProdutoCarrinhoQuandtidade[idProdutoNoCarrinho];
+    }
+    precoCarrinho.innerText=`Total:R$ ${precoTotalCarrinho}`;
+}
