@@ -20,8 +20,8 @@
     </div>
     <section id="produtos-carrinho" class="gap-2 flex flex-col h-3/5 overflow-y-auto">
     </section>
-    <p id="preco-total">Total: $200</p>
-    <button class="bg-slate-200 text-slate-900 p-1 ">Finalizar compra</button>
+    <p id="preco-total" class="bg-slate-200 text-green-700 rounded-sm pl-5">Total: $0,00</p>
+    <button class="bg-teal-50 text-teal-950 hover:bg-teal-950 hover:text-teal-50 p-1 rounded-sm">Finalizar compra</button>
   </section>
 
   <header
@@ -33,7 +33,22 @@
       
     </div>
   </header>
-  <main>
+  <main class="flex flex-col items-center">
+    <section id="filtros" class="p-10 flex">
+      <div class="px-2">
+        <input name="filtro" id="exibir-Todos" type="radio" class="peer hidden" checked>
+        <label for="exibir-Todos" class="peer-checked:bg-slate-950 peer-checked:text-teal-50 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer">Todos</label>
+      </div>
+      <div class="px-2">
+        <input name="filtro" id="exibir-Bebidas" type="radio" class="peer hidden">
+        <label for="exibir-Bebidas" class="peer-checked:bg-slate-950 peer-checked:text-teal-50 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer">Bebidas</label>
+      </div>
+      <div class="px-2">
+        <input name="filtro" id="exibir-Porcoes" type="radio" class="peer hidden">
+        <label for="exibir-Porcoes" class="peer-checked:bg-slate-950 peer-checked:text-teal-50 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer">Porções</label>
+      </div>
+    
+    </section>
     <section id="container-produto" class="flex flex-wrap p-7 gap-10 justify-center">
     </section>
   </main>

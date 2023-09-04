@@ -1,5 +1,9 @@
 import { renderCatalogo } from "./src/cardProduto";
-import { inicializarCarrinho } from "./src/menucarrinho";
+import { inicializarFiltros } from "./src/filtrosCatalogo";
+import { atualizarPrecoCarrinho, inicializarCarrinho, renderizarProdutosCarrinho } from "./src/menucarrinho";
 
 renderCatalogo();
 inicializarCarrinho();
+renderizarProdutosCarrinho();
+atualizarPrecoCarrinho();
+inicializarFiltros();
