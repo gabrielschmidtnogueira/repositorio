@@ -21,16 +21,19 @@
     <section id="produtos-carrinho" class="gap-2 flex flex-col h-3/5 overflow-y-auto">
     </section>
     <p id="preco-total" class="bg-slate-200 text-green-700 rounded-sm pl-5">Total: $0,00</p>
-    <button class="bg-teal-50 text-teal-950 hover:bg-teal-950 hover:text-teal-50 p-1 rounded-sm">Finalizar compra</button>
+    <button id="finalizar-compra" 
+    class="bg-teal-50 text-teal-950 hover:bg-teal-950 hover:text-teal-50 p-1 rounded-sm"
+    >Finalizar compra</button>
   </section>
 
   <header
     class="z-10 relative bg-teal-400 text-xl flex place-content-center py-7 px-8 items-center sticky top-0 shadow-xl">
-    <img src="assets/Acqua Bar.png" alt="" srcset="">
+    <img class="h-16" src="assets/Acqua Bar.png" alt="" srcset="">
     <div class=" absolute right-0 top-7 text-slate-200 flex flex-col  gap-2 mx-2 ">
       <button id="abrirCarrinho"><i class="fa-solid fa-cart-shopping"></i></button>
-      <button><i class="fa-solid fa-list"></i></button>
-      
+      <a href="/pedidos.html">
+        <button><i class="fa-solid fa-list"></i></button>
+      </a>
     </div>
   </header>
   <main class="flex flex-col items-center">
